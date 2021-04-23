@@ -12,6 +12,7 @@ interface InputValueReference {
 }
 
 const Input: React.FC<InputProps> = ({ name, ...rest }) => {
+	const inputElementRef = useRef<any>(null);
 	const inputValueRef = useRef<InputValueReference>({ value: '' });
 	const { fieldName, registerField } = useField(name);
 
@@ -20,12 +21,17 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
 			name: fieldName,
 			ref: inputValueRef.current,
 			path: 'value',
+			setValue(ref: any, value: string) {
+				inputValueRef.current.value = value;
+				inputElementRef.current?.setNativeProps({ text: value });
+			},
 		});
 	}, [fieldName, registerField]);
 
 	return (
 		<Container>
 			<TextInput
+				ref={inputElementRef}
 				style={styles.input}
 				placeholderTextColor="#666360"
 				onChangeText={value => {
@@ -42,7 +48,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		color: '#fff',
 		fontSize: 16,
-		border: 'none',
 	},
 });
 

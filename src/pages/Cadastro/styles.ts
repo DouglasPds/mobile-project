@@ -5,3 +5,8 @@ export const Container = styled.View`
 	justify-content: center;
 	padding: 0 30px;
 `;
+
+export const Label = styled.Text`
+	font-size: 16px;
+	margin-bottom: 10px;
+`;

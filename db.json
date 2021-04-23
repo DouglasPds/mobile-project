@@ -1,0 +1,25 @@
+{
+  "cursos": [
+    {
+      "nome": "Engenharia",
+      "turno": "Noturno",
+      "codigo": 123,
+      "qtdPeriodo": "830000",
+      "id": "1"
+    },
+    {
+      "nome": "Psicologia",
+      "turno": "Noturno",
+      "codigo": 345,
+      "qtdPeriodo": "10333",
+      "id": "2"
+    },
+    {
+      "nome": "",
+      "turno": "",
+      "codigo": "",
+      "qtdPeriodo": "",
+      "id": "5cls47O"
+    }
+  ]
+}
